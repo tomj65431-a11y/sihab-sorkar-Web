@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Sorkar Sihab websites</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon"href="profile.jpg">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<style>
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+
+}
+
+
+body{
+
+background:linear-gradient(135deg,#667eea,#764ba2);
+color:white;
+transition:.5s;
+
+}
+
+
+.dark{
+
+background:#111;
+
+}
+
+
+/* NAVBAR */
+
+
+.navbar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:#0005;
+
+}
+
+
+.logo{
+
+font-size:30px;
+font-weight:bold;
+
+}
+
+
+.navbar a{
+
+color:white;
+text-decoration:none;
+margin:10px;
+cursor:pointer;
+transition:.4s;
+
+}
+
+
+.navbar a:hover{
+
+color:#ffea00;
+transform:scale(1.2);
+
+}
+
+
+
+button{
+
+padding:10px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+transition:.4s;
+
+}
+
+
+button:hover{
+
+background:#ffea00;
+color:black;
+transform:scale(1.1);
+
+}
+
+
+
+
+/* HERO */
+
+
+.hero{
+
+text-align:center;
+padding:60px;
+
+}
+
+
+.hero img{
+
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid white;
+transition:.5s;
+
+}
+
+
+.hero img:hover{
+
+transform:scale(1.1);
+box-shadow:0 0 30px white;
+
+}
+
+
+
+
+/* NAME ONLY HOVER GLOW */
+
+
+.hero h1{
+
+font-size:55px;
+color:#00aaff;
+transition:.5s;
+
+}
+
+
+
+.hero h1:hover{
+
+transform:scale(1.1);
+
+color:#00ffff;
+
+text-shadow:
+0 0 10px #00aaff,
+0 0 30px #00ffff;
+
+}
+
+
+
+
+
+.section{
+
+padding:40px;
+text-align:center;
+
+}
+
+
+
+
+.card{
+
+background:white;
+color:black;
+width:80%;
+margin:20px auto;
+padding:25px;
+border-radius:20px;
+transition:.5s;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 25px yellow;
+
+}
+
+
+
+
+
+
+/* MOTIVATION */
+
+
+.motivation{
+
+padding:15px;
+
+background:#eee;
+
+color:black;
+
+border-radius:10px;
+
+transition:.5s;
+
+}
+
+
+
+.motivation:hover{
+
+transform:scale(1.08);
+
+color:red;
+
+box-shadow:
+0 0 10px red,
+0 0 30px red;
+
+}
+
+
+
+
+
+
+/* SKILLS */
+
+
+.skills span{
+
+background:#764ba2;
+
+padding:10px;
+
+border-radius:20px;
+
+display:inline-block;
+
+margin:5px;
+
+transition:.4s;
+
+}
+
+
+
+.skills span:hover{
+
+background:#00ffff;
+
+color:black;
+
+transform:scale(1.2);
+
+}
+
+
+
+
+
+
+/* CONTACT */
+
+
+.contact-box{
+
+display:inline-block;
+
+width:220px;
+
+margin:15px;
+
+padding:25px;
+
+background:white;
+
+color:black;
+
+border-radius:20px;
+
+transition:.5s;
+
+}
+
+
+
+.contact-box i{
+
+font-size:40px;
+
+margin-bottom:10px;
+
+}
+
+
+
+.phone:hover{
+
+background:#00ff99;
+
+transform:scale(1.1);
+
+}
+
+
+
+.whatsapp:hover{
+
+background:#25D366;
+
+color:white;
+
+transform:scale(1.1);
+
+}
+
+
+
+.youtube:hover{
+
+background:red;
+
+color:white;
+
+transform:scale(1.1);
+
+}
+
+
+
+.facebook:hover{
+
+background:#1877f2;
+
+color:white;
+
+transform:scale(1.1);
+
+}
+
+
+
+
+
+
+/* LOGIN */
+
+
+.login{
+
+display:none;
+
+position:fixed;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+background:white;
+
+color:black;
+
+padding:30px;
+
+border-radius:20px;
+
+}
+
+
+
+.login input{
+
+display:block;
+
+padding:10px;
+
+margin:10px;
+
+width:250px;
+
+}
+
+
+
+
+
+/* DASHBOARD */
+
+
+.dashboard{
+
+display:none;
+
+text-align:center;
+
+padding:40px;
+
+}
+
+
+
+
+.dark .card,
+.dark .login{
+
+background:#222;
+
+color:white;
+
+}
+
+
+
+
+footer{
+
+text-align:center;
+
+padding:20px;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="navbar">
+
+
+<div class="logo">
+
+Sihab
+
+</div>
+
+
+
+<div>
+
+
+<a>Home</a>
+
+<a>About</a>
+
+
+<a onclick="openLogin()" id="loginBtn">
+
+Login
+
+</a>
+
+
+<a onclick="showProfile()" id="profileBtn" style="display:none">
+
+Profile
+
+</a>
+
+
+<a onclick="logout()" id="logoutBtn" style="display:none">
+
+Logout
+
+</a>
+
+
+<button onclick="dark()">
+
+🌙
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="hero">
+
+
+<img src="profile.jpg">
+
+
+<h1>Sorkar Sihab</h1>
+
+
+<p>Web Developer | Designer</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="section">
+
+
+<h1>About Me</h1>
+
+
+<div class="card">
+
+
+<p>
+
+👋 I am <b>Sorkar Sihab</b>
+
+</p>
+
+
+<p>
+
+💻 Web Developer and Designer
+
+</p>
+
+
+<p>
+
+🚀 I create modern websites
+
+</p>
+
+
+<br>
+
+
+<div class="motivation">
+
+🔥 Keep learning, keep growing.
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="section">
+
+
+<h1>Education 🎓</h1>
+
+
+<div class="card">
+
+
+<p>
+
+🏫 Institute:
+<b>Tangail Polytechnic Institute</b>
+
+</p>
+
+
+<p>
+
+📚 Course:
+<b>Diploma Engineering</b>
+
+</p>
+
+
+<p>
+
+💻 Department:
+<b>Computer Technology</b>
+
+</p>
+
+
+<p>
+
+🎯 Goal:
+<b>Full Stack Developer</b>
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="section">
+
+
+<h1>My Skills</h1>
+
+
+<div class="skills">
+
+
+<span>HTML</span>
+
+<span>CSS</span>
+
+<span>JavaScript</span>
+
+<span>Web Design</span>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="section">
+
+
+<h1>Contact Me</h1>
+
+
+
+<div class="contact-box phone">
+
+
+<i class="fa-solid fa-phone"></i>
+
+<h3>Phone</h3>
+
+<p>01313225030</p>
+
+
+</div>
+
+
+
+
+
+<div class="contact-box whatsapp">
+
+
+<i class="fa-brands fa-whatsapp"></i>
+
+<h3>WhatsApp</h3>
+
+<a href="https://wa.me/8801313225030">
+
+Chat Now
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+<div class="contact-box youtube">
+
+
+<i class="fa-brands fa-youtube"></i>
+
+<h3>YouTube</h3>
+
+<a href="https://www.youtube.com/@SSJERRY-y7p">
+
+Channel
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="contact-box facebook">
+
+
+<i class="fa-brands fa-facebook"></i>
+
+<h3>Facebook</h3>
+
+<a href="https://www.facebook.com/share/17wPR5sa4i/">
+
+Profile
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="login" id="login">
+
+
+<h2>Login</h2>
+
+
+<input placeholder="Email">
+
+
+<input placeholder="Password">
+
+
+<button onclick="login()">
+
+Login
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="dashboard" id="dash">
+
+
+<h1>Welcome Sihab 🎉</h1>
+
+
+<div class="card">
+
+
+<h2>Student Profile</h2>
+
+
+<br>
+
+
+<p>Name: <b>Sorkar Sihab</b></p>
+
+
+<p>Institute: <b>Tangail Polytechnic Institute</b></p>
+
+
+<p>Department: <b>Computer Technology</b></p>
+
+
+<p>Study: <b>Diploma Engineering</b></p>
+
+
+</div>
+
+
+
+<button onclick="logout()">
+
+Logout
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<footer>
+
+© 2026 Sorkar Sihab
+
+</footer>
+
+
+
+
+
+
+<script>
+
+
+function openLogin(){
+
+login.style.display="block";
+
+}
+
+
+
+function login(){
+
+login.style.display="none";
+
+dash.style.display="block";
+
+
+loginBtn.style.display="none";
+
+profileBtn.style.display="inline";
+
+logoutBtn.style.display="inline";
+
+
+}
+
+
+
+function logout(){
+
+dash.style.display="none";
+
+
+loginBtn.style.display="inline";
+
+profileBtn.style.display="none";
+
+logoutBtn.style.display="none";
+
+
+alert("Logout Successful");
+
+}
+
+
+
+function showProfile(){
+
+dash.style.display="block";
+
+}
+
+
+
+
+function dark(){
+
+document.body.classList.toggle("dark");
+
+}
+
+
+
+</script>
+
+
+</body>
+</html>
